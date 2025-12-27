@@ -184,42 +184,69 @@ nav li:hover::after {
 }
 
 /* ================= SECTIONS ================= */
-.categories,
-.section {
+.categories {
     background: #fff;
-    padding: 60px 40px;
+    padding: 50px 20px;
 }
 
-.categories h3,
-.section h3 {
+.categories h3 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
     color: var(--burgundy);
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .cat-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 22px;
 }
 
-.cat {
-    border: 2px solid var(--gold);
-    border-radius: 20px;
-    padding: 30px 15px;
+.cat-item {
+    text-decoration: none;
+    background: #fff;
+    border: 1.5px solid var(--gold);
+    border-radius: 18px;
+    padding: 22px 10px;
     text-align: center;
-    cursor: pointer;
-    transition: .3s;
+    transition: all 0.25s ease;
 }
 
-.cat:hover {
-    background: var(--gold);
-    color: #fff;
-    transform: translateY(-5px);
+.cat-item img {
+    width: 110px;     /* بزرگ‌تر شد */
+    height: 110px;    /* بزرگ‌تر شد */
+    object-fit: cover;
+    margin-bottom: 14px;
+    border-radius: 14px;
 }
 
-.cat img {
-    width: 55px;
-    margin-bottom: 15px;
+.cat-item span {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.cat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* موبایل */
+@media (max-width: 576px) {
+    .cat-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cat-item img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cat-item span {
+        font-size: 13px;
+    }
 }
 
 .products {
