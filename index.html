@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گالری طلای اوستا</title>
+
+  <!-- Vazirmatn -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+ <link rel="stylesheet" href="../css/style.css">
+  
+</head>
+
+<body>
+
+  <header>
+
+    <!-- HAMBURGER -->
+
+
+    <!-- LOGO RIGHT -->
+    <div class="contaner-h" style="display: flex;">
+      <div class="logo">
+        <img src="assets/avesta logo.png" alt="لوگو">
+        <span class="logo-text"> گالری طلای اوستا </span>
+      </div>
+      <!-- MENU CENTER -->
+      <nav>
+        <ul>
+          <li>خانه</li>
+          <li>محصولات</li>
+          <li>تماس با ما</li>
+          <li>خدمات پس از فروش</li>
+          <li>رضایت مشتری</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li onclick="toggleMenu()">خانه</li>
+      <li onclick="toggleMenu()">محصولات</li>
+      <li onclick="toggleMenu()">تماس با ما</li>
+      <li onclick="toggleMenu()">خدمات پس از فروش</li>
+      <li onclick="toggleMenu()">رضایت مشتری</li>
+    </ul>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="hero-title">اوستا</div>
+      <div class="hero-slogan">زیباییِ زنان، قدرتِ مردان 💎</div>
+      <button>مشاهده محصولات</button>
+    </div>
+  </div>
+
+  <section class="categories">
+    <h3>دسته‌بندی محصولات</h3>
+    <div class="cat-grid">
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">گردنبند</div>
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">سرویس طلا</div>
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png">حلقه</div>
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/190/190402.png">گوشواره</div>
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135720.png">پلاک</div>
+      <div class="cat"><img src="https://cdn-icons-png.flaticon.com/512/262/262034.png">سکه طلا</div>
+    </div>
+  </section>
+  <section class="section">
+    <h3>جدیدترین محصولات</h3>
+    <div class="products">
+      <div class="product"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">محصول<span>ناموجود</span>
+      </div>
+      <div class="product"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">محصول<span>ناموجود</span>
+      </div>
+      <div class="product"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">محصول<span>ناموجود</span>
+      </div>
+      <div class="product"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">محصول<span>ناموجود</span>
+      </div>
+      <div class="product"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">محصول<span>ناموجود</span>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-section">
+      <h4>گالری طلای اوستا</h4>
+      <p>خرید امن و مطمئن طلا و جواهرات با بهترین کیفیت</p>
+    </div>
+    <div class="footer-section">
+      <h4>لینک‌های مفید</h4> <a href="#">خانه</a> <a href="#">محصولات</a> <a href="#">تماس با ما</a>
+    </div>
+    <div class="footer-section">
+      <h4>تماس با ما</h4>
+      <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+      <p>ایمیل: info@goldgallery.com</p>
+      <p>تهران، ایران</p>
+    </div>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // تغییر آیکون و باز/بسته کردن منو
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation(); // جلوگیری از بسته شدن با کلیک روی خود همبرگر
+      mobileMenu.classList.toggle('active');
+      hamburger.classList.toggle('open'); // کلاس برای ضربدر
+    });
+
+    // بسته شدن منو با کلیک روی صفحه
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('open');
+      }
+    });
+
+    // جلوگیری از بسته شدن منو با کلیک داخل منو
+    mobileMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  </script>
+
+</body>
+
+</html>
