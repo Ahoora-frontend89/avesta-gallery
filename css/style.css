@@ -253,18 +253,70 @@ nav li:hover::after {
 }
 
 /* ================= FOOTER ================= */
-footer {
-    background: var(--burgundy);
+.site-footer {
+    background-color: #4c181e;
     color: #fff;
-    padding: 50px 40px;
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    font-family: 'Vazir', sans-serif;
+    padding: 50px 20px 30px 20px;
 }
 
-.footer-section {
-    flex: 1;
-    min-width: 200px;
+.site-footer a {
+    color: #f0d084;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #ffd700;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1 1 300px;
+    margin: 15px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0d084;
+    padding-bottom: 8px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.trust-badges img {
+    height: 60px;
+    /* بزرگتر */
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    height: 35px;
+    /* کمی بزرگتر */
+    margin-right: 12px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #f0d084;
+    padding-top: 20px;
+    font-size: 14px;
 }
 
 /* ================= RESPONSIVE ================= */
