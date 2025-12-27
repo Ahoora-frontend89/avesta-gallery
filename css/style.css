@@ -47,7 +47,8 @@ header {
 
 .logo-text {
     font-family: 'IranNastaliq';
-    font-size: 34px;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--burgundy);
 }
 
