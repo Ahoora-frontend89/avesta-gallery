@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <section class="categories">
+  <!-- <section class="categories">
     <h3>دسته‌بندی محصولات</h3>
 
     <div class="cat-grid">
@@ -95,8 +95,14 @@
         <span>گردنبند</span>
       </a>
     </div>
-  </section>
+  </section> -->
+  <section class="categories">
+    <h3 id="catTitle">دسته‌بندی محصولات</h3>
 
+    <div class="cat-grid" id="catGrid">
+      <!-- داینامیک با JS پر می‌شود -->
+    </div>
+  </section>
 
   <!-- <section class="section">
     <h3>جدیدترین محصولات</h3>
@@ -173,6 +179,130 @@
     mobileMenu.addEventListener('click', (e) => {
       e.stopPropagation();
     });
+
+
+    const data = [
+      {
+        title: "سرویس طلا",
+        image: "./assets/482844987_961469956077902_5872026933026224830_n.jpg",
+        children: [
+          {
+            title: "نیم ست",
+            image: "/assets/IMG_0540 (2).png",
+            products: [
+              { title: "نیم ست آوا", image: "./assets/IMG_0459.HEIC", weight: "12.5", wage: "8%" },
+              { title: "نیم ست نگین", image: "./assets/photo_2025-12-24_14-10-28.jpg", weight: "10.2", wage: "7%" },
+              { title: "نیم ست پرنس", image: "./assets/IMG_0770.JPG", weight: "11.1", wage: "9%" },
+              { title: "نیم ست لارا", image: "./assets/IMG_0543 (2).png", weight: "9.8", wage: "6%" }
+            ]
+          },
+          {
+            title: "ست کامل",
+            image: "/assets/IMG_0540 (2).pngg",
+            products: [
+              { title: "ست کامل الماس", image: "./assets/IMG_0543 (2).png", weight: "25.4", wage: "10%" },
+              { title: "ست کامل ژاله", image: "./assets/IMG_0543 (2).png", weight: "23.1", wage: "9%" },
+              { title: "ست کامل ترنم", image: "./assets/IMG_0543 (2).png", weight: "22.8", wage: "8%" },
+              { title: "ست کامل آریا", image: "./assets/IMG_0543 (2).png", weight: "24.6", wage: "11%" }
+            ]
+          },
+          {
+            title: "سرویس ظریف",
+            image: "./assets/IMG_0773.JPG",
+            products: [
+              { title: "ظریف مدل A", image: "./assets/IMG_0543 (2).png", weight: "8.3", wage: "6%" },
+              { title: "ظریف مدل B", image: "assets/p/10.jpg", weight: "7.9", wage: "5%" },
+              { title: "ظریف مدل C", image: "assets/p/11.jpg", weight: "8.1", wage: "6%" },
+              { title: "ظریف مدل D", image: "assets/p/12.jpg", weight: "8.7", wage: "7%" }
+            ]
+          },
+          {
+            title: "سرویس مجلسی",
+            image: "./assets/IMG_0540 (2).png",
+            products: [
+              { title: "مجلسی مدل طلوع", image: "assets/p/13.jpg", weight: "18.2", wage: "9%" },
+              { title: "مجلسی مدل شب", image: "assets/p/14.jpg", weight: "17.5", wage: "8%" },
+              { title: "مجلسی مدل مهتاب", image: "assets/p/15.jpg", weight: "19.1", wage: "10%" },
+              { title: "مجلسی مدل رویا", image: "assets/p/16.jpg", weight: "18.8", wage: "9%" }
+            ]
+          },
+          {
+            title: "سرویس اسپرت",
+            image: "./assets/b copy.png",
+            products: [
+              { title: "اسپرت مدل X", image: "assets/p/17.jpg", weight: "14.2", wage: "7%" },
+              { title: "اسپرت مدل Y", image: "assets/p/18.jpg", weight: "13.9", wage: "6%" },
+              { title: "اسپرت مدل Z", image: "assets/p/19.jpg", weight: "15.1", wage: "8%" },
+              { title: "اسپرت مدل S", image: "assets/p/20.jpg", weight: "14.8", wage: "7%" }
+            ]
+          }
+        ]
+      },
+
+      // 7 دسته دیگر (مختصر ولی واقعی)
+      { title: "گردنبند", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "گوشواره", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "حلقه", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "دستبند", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "پلاک", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "سکه طلا", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) },
+      { title: "سرویس کودک", image: "./assets/IMG_0540 (2).png", children: JSON.parse(JSON.stringify([])) }
+    ];
+
+    const grid = document.getElementById("catGrid");
+    const titleEl = document.getElementById("catTitle");
+
+    function render(items, level = "cat") {
+      grid.innerHTML = "";
+
+      items.forEach(item => {
+        const el = document.createElement("a");
+        el.href = "#";
+        el.className = "cat-item";
+
+        if (level === "product") {
+          el.classList.add("product-card");
+
+          el.innerHTML = `
+    <div class="product-img">
+      <img src="${item.image}" alt="${item.title}">
+    </div>
+
+    <div class="product-info">
+      <h4>${item.title}</h4>
+      <p>${item.weight} گرم • اجرت ${item.wage}</p>
+      <button class="buy-btn">خرید</button>
+    </div>
+  `;
+        }
+
+
+        else {
+          el.innerHTML = `
+        <img src="${item.image}">
+        <span>${item.title}</span>
+      `;
+        }
+
+        el.addEventListener("click", e => {
+          e.preventDefault();
+          if (item.children && item.children.length) {
+            titleEl.innerText = item.title;
+            render(item.children, "sub");
+          } else if (item.products) {
+            titleEl.innerText = item.title;
+            render(item.products, "product");
+          }
+        });
+
+        grid.appendChild(el);
+      });
+    }
+
+    // شروع
+    render(data);
+
+
   </script>
 
 </body>
