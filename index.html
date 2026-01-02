@@ -161,7 +161,32 @@
       <p>© 1404 گالری طلای اوستا. تمام حقوق محفوظ است.</p>
     </div>
   </footer>
+  <!-- PRODUCT IMAGE VIEWER -->
+  <div id="imageViewer" class="image-viewer">
+    <img id="viewerImg" src="" alt="محصول">
+  </div>
+
   <script>
+
+    const viewer = document.getElementById("imageViewer");
+    const viewerImg = document.getElementById("viewerImg");
+
+    // باز شدن تصویر
+    document.addEventListener("click", e => {
+      const img = e.target.closest(".lux-product-card img");
+      if (!img) return;
+
+      e.preventDefault();
+      viewerImg.src = img.src;
+      viewer.classList.add("active");
+    });
+
+    // بستن با کلیک روی فضای خالی
+    viewer.addEventListener("click", () => {
+      viewer.classList.remove("active");
+      viewerImg.src = "";
+    })
+
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -433,13 +458,22 @@
         if (level === "product") {
           el.className = "lux-product-card";
           el.innerHTML = `
-    <div class="img-wrap"><img src="${item.image}"></div>
-    <div class="info">
-      <h4>${item.title}</h4>
-      <p>${item.weight} • اجرت ${item.wage}</p>
-      <button>خرید</button>
+    <div class="lux-product-image">
+      <img src="${item.image}" alt="${item.title}">
+    </div>
+
+    <div class="lux-product-body">
+      <h4 class="lux-product-title">${item.title}</h4>
+
+      <div class="lux-product-meta">
+        <span>${item.weight} گرم</span>
+        <span>اجرت ${item.wage}</span>
+      </div>
+
+      <button class="lux-buy-btn">افزودن به سبد خرید</button>
     </div>`;
-        } else if (level === "sub") {
+        }
+        else if (level === "sub") {
           el.className = "lux-sub-card";
           el.innerHTML = `
     <img src="${item.image}">

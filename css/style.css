@@ -22,7 +22,17 @@ body {
     line-height: 1.9;
     color: #222;
 }
+:root {
+    --gold-light: linear-gradient(135deg, #f7e7b4, #d4af37);
+    --gold-solid: #d4af37;
+    --dark: #2a2a2a;
+}
 
+body {
+    font-family: Vazirmatn;
+    direction: rtl;
+    background: #f5f5f5;
+}
 /* ================= HEADER ================= */
 header {
     background: #fff;
@@ -46,9 +56,9 @@ header {
 }
 
 .logo-text {
-    font-family: 'IranNastaliq';
+    /* font-family: 'IranNastaliq'; */
     font-size: 1.8rem;
-    font-weight:bolder;
+    font-weight: bolder;
     color: var(--burgundy);
 }
 
@@ -258,9 +268,7 @@ nav li:hover::after {
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:1024px) {
-    .products {
-        grid-template-columns: repeat(3, 1fr)
-    }
+    
 
     .cat-grid {
         grid-template-columns: repeat(3, 1fr)
@@ -287,9 +295,7 @@ nav li:hover::after {
         height: 260px;
     }
 
-    .products {
-        grid-template-columns: repeat(2, 1fr)
-    }
+    
 
     .hero-title {
         font-size: 38px
@@ -301,9 +307,6 @@ nav li:hover::after {
 }
 
 @media(max-width:420px) {
-    .products {
-        grid-template-columns: 1fr
-    }
 
     .cat-grid {
         grid-template-columns: repeat(2, 1fr)
@@ -329,239 +332,240 @@ nav li:hover::after {
 
 
 
-:root {
-  --gold-light: linear-gradient(135deg,#f7e7b4,#d4af37);
-  --gold-solid: #d4af37;
-  --dark: #2a2a2a;
-}
 
-body {
-  font-family: Vazirmatn;
-  direction: rtl;
-  background: #f5f5f5;
-}
 
 /* ===== ROADMAP ===== */
 .lux-roadmap-new {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 .lux-roadmap-new span {
-  padding: 8px 18px;
-  border-radius: 30px;
-  background: rgba(255,215,160,.25);
-  border: 1px solid var(--gold-solid);
-  color: #5a4200;
-  font-size: 13px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: .35s;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: rgba(255, 215, 160, .25);
+    border: 1px solid var(--gold-solid);
+    color: #5a4200;
+    font-size: 13px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: .35s;
 }
 
 .lux-roadmap-new span:hover {
-  background: var(--gold-light);
-  color: #fff;
+    background: var(--gold-light);
+    color: #fff;
 }
 
 /* ===== BACK BTN ===== */
 .lux-back-btn {
-  display: none;
-  margin: 10px auto 30px;
-  padding: 9px 26px;
-  background: var(--gold-light);
-  border: none;
-  border-radius: 40px;
-  font-size: 14px;
-  cursor: pointer;
+    display: none;
+    margin: 10px auto 30px;
+    padding: 9px 26px;
+    background: var(--gold-light);
+    border: none;
+    border-radius: 40px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /* ===== GRID ===== */
 .cat-grid {
     padding: 10px 48px 65px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
 }
 
 /* ===== CATEGORY CARD ===== */
 /* ===== SUB CATEGORY CARD ===== */
 .lux-sub-card {
-  background: #fff;
-  border-radius: 22px;
-  padding: 16px 10px;
-  text-align: center;
-  border: 1px solid var(--gold-solid);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
+    background: #fff;
+    border-radius: 22px;
+    padding: 16px 10px;
+    text-align: center;
+    border: 1px solid var(--gold-solid);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 }
 
 .lux-sub-card img {
-  width: 120px;
-  /*بزرگومربعقبلازتبدیلبهدایره*/height: 120px   ;
-  border-radius: 100%;
-  /*تصویردایره‌ای*/object-fit: cover;
-  /*فضایپرتحذفمی‌شود*/margin-bottom: 12px;
-  transition: transform 0.3s ease;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
+    width: 120px;
+    /*بزرگومربعقبلازتبدیلبهدایره*/
+    height: 120px;
+    border-radius: 100%;
+    /*تصویردایره‌ای*/
+    object-fit: cover;
+    /*فضایپرتحذفمی‌شود*/
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
 }
 
 .lux-sub-card:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .lux-sub-card span {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  color: #b76e79;   /* رنگ زیبا برای متن */
-  text-decoration: none; /* برداشتن هر خط زیر متن */
-  transition: color 0.3s ease;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #b76e79;
+    /* رنگ زیبا برای متن */
+    text-decoration: none;
+    /* برداشتن هر خط زیر متن */
+    transition: color 0.3s ease;
 }
 
 .lux-sub-card:hover span {
-  color: var(--gold-solid);
+    color: var(--gold-solid);
 }
 
 /* برای ریسپانسیو */
 @media (max-width: 576px) {
-  .lux-sub-card img {
-    width: 150px;
-    height: 130px;
-  }
-  .lux-sub-card span {
-    font-size: 13px;
-  }
+    .lux-sub-card img {
+        width: 150px;
+        height: 130px;
+    }
+
+    .lux-sub-card span {
+        font-size: 16px;
+    }
 }
 
 
 .img-wrap {
-  height: 200px;
+    height: 200px;
 }
 
 .img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .lux-product-card .info {
-  padding: 14px;
-  text-align: center;
+    padding: 14px;
+    text-align: center;
 }
 
 .lux-product-card button {
-  width: 100%;
-  padding: 9px;
-  border-radius: 12px;
-  border: 1px solid var(--gold-solid);
-  background: transparent;
-  cursor: pointer;
-  transition: .3s;
+    width: 100%;
+    padding: 9px;
+    border-radius: 12px;
+    border: 1px solid var(--gold-solid);
+    background: transparent;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .lux-product-card button:hover {
-  background: var(--gold-light);
-  color: #fff;
+    background: var(--gold-light);
+    color: #fff;
 }
 
 @keyframes fadeUp {
-  from {opacity:0; transform:translateY(15px)}
-  to {opacity:1; transform:none}
+    from {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
 }
 
 
 
 /* ===== MAIN CATEGORY CARD (LEVEL 1) ===== */
 .categories h3 {
-  text-align: center;
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--burgundy);
-  margin-bottom: 35px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--burgundy);
+    margin-bottom: 35px;
 }
-.categories{
+
+.categories {
     margin-top: 2rem;
 }
+
 .lux-cat-card {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(247, 231, 180, 0.55),
-    rgba(255, 255, 255, 0.9)
-  );
-  border-radius: 26px;
-  padding: 28px 14px 22px;
-  text-align: center;
-  border: 1px solid rgba(212, 175, 55, 0.55);
-  transition: all 0.35s ease;
-  overflow: hidden;
-  text-decoration: none;
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(247, 231, 180, 0.55),
+            rgba(255, 255, 255, 0.9));
+    border-radius: 26px;
+    padding: 28px 14px 22px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    transition: all 0.35s ease;
+    overflow: hidden;
+    text-decoration: none;
 }
 
 /* subtle shine */
 .lux-cat-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.35),
-    transparent 70%
-  );
-  opacity: 0;
-  transition: .4s;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.35),
+            transparent 70%);
+    opacity: 0;
+    transition: .4s;
 }
 
 .lux-cat-card:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* image */
 .lux-cat-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 100%;
-  margin-bottom: 16px;
-  background: #fff;
-  padding: 6px;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
-  transition: .35s;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    transition: .35s;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
 }
 
 .lux-cat-card:hover img {
-  transform: translateY(-6px);
+    transform: translateY(-6px);
 }
 
 /* title */
 .lux-cat-card span {
-  display: block;
-  font-size: 16px;
-  font-weight: 600;
-  color: #4c3a00;
-  letter-spacing: .3px;
-  text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4c3a00;
+    letter-spacing: .3px;
+    text-decoration: none;
 }
 
 /* hover */
 .lux-cat-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(212, 175, 55, 0.25);
 }
 
 
@@ -569,3 +573,123 @@ body {
 
 
 
+/* ================= LUX PRODUCT CARD ================= */
+
+.lux-product-card {
+    text-decoration: none;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.lux-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+}
+
+/* تصویر بزرگ */
+.lux-product-image {
+    width: 100%;
+    height: 200px;
+    background: #f6f6f6;
+}
+
+.lux-product-image img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* بدنه */
+.lux-product-body {
+    padding: 14px;
+    text-align: center;
+}
+
+.lux-product-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a2a2a;
+    margin-bottom: 6px;
+}
+
+/* متا (وزن + اجرت) */
+.lux-product-meta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+/* دکمه */
+.lux-buy-btn {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 12px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-size: 13px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.lux-buy-btn:hover {
+    background: var(--gold);
+    color: #fff;
+}
+
+/* ================= MOBILE FIRST ================= */
+@media (max-width: 576px) {
+    .lux-product-image {
+        height: 190px;
+    }
+
+    .lux-product-title {
+        font-size: 13px;
+    }
+}
+
+/* دسکتاپ کمی بزرگ‌تر */
+@media (min-width: 768px) {
+    .lux-product-image {
+        height: 240px;
+    }
+
+    .lux-product-title {
+        font-size: 15px;
+    }
+}
+
+
+
+
+/* ================= IMAGE VIEWER ================= */
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.image-viewer.active {
+  display: flex;
+}
+
+.image-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  background: #fff;
+}
