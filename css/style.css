@@ -433,8 +433,8 @@ nav li:hover::after {
 /* برای ریسپانسیو */
 @media (max-width: 576px) {
     .lux-sub-card img {
-        width: 150px;
-        height: 130px;
+        width: 125px;
+        height: 125px;
     }
 
     .lux-sub-card span {
