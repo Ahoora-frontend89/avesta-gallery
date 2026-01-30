@@ -153,6 +153,10 @@ nav li:hover::after {
     cursor: pointer;
 }
 
+.mobile-menu li  a{
+    text-decoration: none;
+    color: #4c181e;
+}
 /* ================= HERO ================= */
 .hero {
     background:
