@@ -61,7 +61,7 @@
     </div>
   </div>
 
- 
+
   <section class="categories">
     <h3 id="catTitle">دسته‌بندی محصولات</h3>
 
@@ -117,7 +117,7 @@
   <div id="imageViewer" class="image-viewer">
     <img id="viewerImg" src="" alt="محصول">
   </div>
-
+  <a href="checkout.html" class="lux-buy-btn">خرید</a>
   <script>
 
     const viewer = document.getElementById("imageViewer");
@@ -326,9 +326,9 @@
               { id: "p-2-2-3", title: "دستبند ستاره", image: "./assets/dast3.jpg", weight: "3.5", wage: "5%" },
               { id: "p-2-2-4", title: "دستبند ماه", image: "./assets/dast3.jpg", weight: "3.9", wage: "6%" }
             ]
-          
-      },
-    ]
+
+          },
+        ]
 
       }
     ]
@@ -380,7 +380,9 @@
         <span>اجرت ${item.wage}</span>
       </div>
 
-      <button class="lux-buy-btn">افزودن به سبد خرید</button>
+      <a href="checkout.html" class="lux-buy-btn a-lux-buy-btn">خرید</a>
+
+        </button>
     </div>`;
         }
         else if (level === "sub") {
@@ -397,7 +399,11 @@
 
 
         el.onclick = e => {
+          // ✅ اگر روی دکمه خرید کلیک شد، اجازه بده لینک کارش رو بکنه
+          if (e.target.closest(".lux-buy-btn")) return;
+
           e.preventDefault();
+
           historyStack.push({ items, level, title: titleEl.innerText });
 
           if (item.children) {

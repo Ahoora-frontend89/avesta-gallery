@@ -644,7 +644,9 @@ nav li:hover::after {
     cursor: pointer;
     transition: .25s;
 }
-
+.a-lux-buy-btn{
+    display: block;
+}
 .lux-buy-btn:hover {
     background: var(--gold);
     color: #fff;

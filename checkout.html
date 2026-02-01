@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تکمیل خرید | گالری طلای اوستا</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #faf7f3;
+      color: #333;
+    }
+
+    .checkout {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .checkout h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .purchase-type {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .purchase-type button {
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: 1px solid #c9a44d;
+      background: white;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .purchase-type button.active {
+      background: #c9a44d;
+      color: white;
+    }
+
+    .form-box {
+      display: none;
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .form-box.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 90px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 30px;
+      border: none;
+      background: #c9a44d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .purchase-type {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="checkout">
+  <h1>تکمیل فرآیند خرید</h1>
+
+  <!-- انتخاب نوع خرید -->
+  <div class="purchase-type">
+    <button id="inPersonBtn" class="active">خرید حضوری</button>
+    <button id="cardBtn">کارت به کارت</button>
+  </div>
+
+  <!-- خرید حضوری -->
+  <form class="form-box active" id="inPersonForm">
+    <div class="form-group">
+      <label>نام و نام خانوادگی</label>
+      <input type="text" placeholder="مثال: سارا محمدی" required>
+    </div>
+
+    <div class="form-group">
+      <label>آدرس مراجعه / تحویل</label>
+      <textarea placeholder="آدرس یا توضیحات مربوط به خرید حضوری"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>توضیحات تکمیلی</label>
+      <textarea placeholder="ساعت مراجعه، مدل خاص، توضیحات دیگر..."></textarea>
+    </div>
+
+    <button class="submit-btn">ثبت درخواست خرید حضوری</button>
+
+    <div class="note">
+      پس از ثبت، کارشناسان اوستا برای هماهنگی با شما تماس خواهند گرفت.
+    </div>
+  </form>
+
+  <!-- کارت به کارت -->
+  <form class="form-box" id="cardForm">
+    <div class="form-group">
+      <label>نام و نام خانوادگی</label>
+      <input type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label>شماره تماس</label>
+      <input type="tel" required>
+    </div>
+
+    <div class="form-group">
+      <label>آدرس ارسال</label>
+      <textarea required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>توضیحات (اختیاری)</label>
+      <textarea></textarea>
+    </div>
+
+    <div class="note">
+      اطلاعات کارت و مبلغ نهایی پس از ثبت سفارش از طریق تماس یا واتساپ ارسال می‌شود.
+    </div>
+
+    <button class="submit-btn">ثبت سفارش کارت به کارت</button>
+  </form>
+</div>
+
+<script>
+  const inPersonBtn = document.getElementById("inPersonBtn");
+  const cardBtn = document.getElementById("cardBtn");
+  const inPersonForm = document.getElementById("inPersonForm");
+  const cardForm = document.getElementById("cardForm");
+
+  inPersonBtn.onclick = () => {
+    inPersonBtn.classList.add("active");
+    cardBtn.classList.remove("active");
+    inPersonForm.classList.add("active");
+    cardForm.classList.remove("active");
+  };
+
+  cardBtn.onclick = () => {
+    cardBtn.classList.add("active");
+    inPersonBtn.classList.remove("active");
+    cardForm.classList.add("active");
+    inPersonForm.classList.remove("active");
+  };
+</script>
+
+</body>
+</html>
