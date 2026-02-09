@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <title>تکمیل خرید | گالری طلای اوستا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -17,6 +17,10 @@
       margin: 0;
       background: #faf7f3;
       color: #333;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .checkout {
@@ -57,7 +61,7 @@
       background: white;
       border-radius: 20px;
       padding: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     .form-box.active {
@@ -74,7 +78,8 @@
       font-size: 14px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 12px;
       border-radius: 12px;
@@ -99,6 +104,10 @@
       margin-top: 10px;
     }
 
+    .submit-btn a {
+      color: #faf7f3;
+    }
+
     .note {
       font-size: 13px;
       color: #777;
@@ -111,46 +120,152 @@
         flex-direction: column;
       }
     }
+    /* باکس راه های ارتباطی */
+    .contact-box {
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+.contact-item img {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-item.whatsapp {
+  color: #1f8f4a;
+}
+
+.contact-item.rubika {
+  color: #7b3fe4;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
-<div class="checkout">
-  <h1>تکمیل فرآیند خرید</h1>
+  <div class="checkout">
+    <h1>تکمیل فرآیند خرید</h1>
 
-  <!-- انتخاب نوع خرید -->
-  <div class="purchase-type">
-    <button id="inPersonBtn" class="active">خرید حضوری</button>
-    <button id="cardBtn">کارت به کارت</button>
-  </div>
-
-  <!-- خرید حضوری -->
-  <form class="form-box active" id="inPersonForm">
-    <div class="form-group">
-      <label>نام و نام خانوادگی</label>
-      <input type="text" placeholder="مثال: سارا محمدی" required>
+    <!-- انتخاب نوع خرید -->
+    <div class="purchase-type">
+      <button id="inPersonBtn" class="active">ثبت سفارش و خرید </button>
     </div>
 
-    <div class="form-group">
-      <label>آدرس مراجعه / تحویل</label>
-      <textarea placeholder="آدرس یا توضیحات مربوط به خرید حضوری"></textarea>
-    </div>
+    <!-- خرید حضوری -->
 
-    <div class="form-group">
-      <label>توضیحات تکمیلی</label>
-      <textarea placeholder="ساعت مراجعه، مدل خاص، توضیحات دیگر..."></textarea>
-    </div>
 
-    <button class="submit-btn">ثبت درخواست خرید حضوری</button>
+    <form class="form-box active" id="inPersonForm">
+      <div>
+        <p>
+          برای ثبت سفارش و اطلاع از قیمت نهایی از طریق یکی از راه های ارتباطی زیر خرید خود را انجام بدهید
+        </p>
+        <!-- راه های ارتباطی -->
+        <div class="contact-box">
+          <p>برای هماهنگی سریع‌تر می‌توانید از راه‌های زیر با ما در ارتباط باشید</p>
 
-    <div class="note">
-      پس از ثبت، کارشناسان اوستا برای هماهنگی با شما تماس خواهند گرفت.
-    </div>
-  </form>
+          <div class="contact-links">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank" class="contact-item whatsapp">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+              <span>واتساپ</span>
+            </a>
 
-  <!-- کارت به کارت -->
-  <form class="form-box" id="cardForm">
+            <a href="https://rubika.ir/USERNAME" target="_blank" class="contact-item rubika">
+              <img src="assets/minimal/minimal.png" alt="Rubika">
+              <span>روبیکا</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <button class="submit-btn">
+
+            <a href="tel:+989180018197" class="call-button">
+              <i class="fas fa-phone-alt"></i>
+              <span>تماس تلفنی با ما (از 9 صبح تا 8 شب )</span>
+            </a>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- <div class="form-group">
+        <label>نام و نام خانوادگی</label>
+        <input type="text" placeholder="مثال: سارا محمدی" required>
+      </div>
+
+      <div class="form-group">
+        <label>آدرس مراجعه / تحویل</label>
+        <textarea placeholder="آدرس یا توضیحات مربوط به خرید حضوری"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>توضیحات تکمیلی</label>
+        <textarea placeholder="ساعت مراجعه، مدل خاص، توضیحات دیگر..."></textarea>
+      </div>
+
+      <div>
+        <button class="submit-btn">
+
+          <a href="tel:+989361742246" class="call-button">
+            <i class="fas fa-phone-alt"></i>
+            <span>تماس تلفنی با ما</span>
+          </a>
+        </button>
+      </div>
+
+      <div class="note">
+        پس از ثبت، کارشناسان اوستا برای هماهنگی با شما تماس خواهند گرفت.
+      </div> -->
+    </form>
+
+    <!-- کارت به کارت -->
+    <!-- <form class="form-box" id="cardForm">
     <div class="form-group">
       <label>نام و نام خانوادگی</label>
       <input type="text" required>
@@ -176,29 +291,13 @@
     </div>
 
     <button class="submit-btn">ثبت سفارش کارت به کارت</button>
-  </form>
-</div>
+  </form> -->
+  </div>
 
-<script>
-  const inPersonBtn = document.getElementById("inPersonBtn");
-  const cardBtn = document.getElementById("cardBtn");
-  const inPersonForm = document.getElementById("inPersonForm");
-  const cardForm = document.getElementById("cardForm");
+  <script>
 
-  inPersonBtn.onclick = () => {
-    inPersonBtn.classList.add("active");
-    cardBtn.classList.remove("active");
-    inPersonForm.classList.add("active");
-    cardForm.classList.remove("active");
-  };
-
-  cardBtn.onclick = () => {
-    cardBtn.classList.add("active");
-    inPersonBtn.classList.remove("active");
-    cardForm.classList.add("active");
-    inPersonForm.classList.remove("active");
-  };
-</script>
+  </script>
 
 </body>
+
 </html>
