@@ -53,13 +53,49 @@
     </ul>
   </div>
 
-  <div class="hero">
-    <div>
-      <div class="hero-title">اَوِستا</div>
-      <div class="hero-slogan">زیباییِ زنان، قدرتِ مردان 💎</div>
-      <button>مشاهده محصولات</button>
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hero Slider</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="slider-container">
+      <!-- Slide 1 -->
+      <div class="slide active" style="background-image: url('assets/482844987_961469956077902_5872026933026224830_n.jpg');">
+        <div class="slide-content">
+          <div class="hero-title">اَوِستا</div>
+          <div class="hero-slogan">زیباییِ زنان، قدرتِ مردان 💎</div>
+          <button>مشاهده محصولات</button>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: url('assets/image.png');">
+        <div class="slide-content">
+          <div class="hero-title">عنوان اسلاید دوم</div>
+          <div class="hero-slogan">متن مخصوص اسلاید دوم</div>
+          <button>مشاهده محصولات</button>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide" style="background-image: url('assets/IMG_0454\ \(2\).png');">
+        <div class="slide-content">
+          <div class="hero-title">عنوان اسلاید سوم</div>
+          <div class="hero-slogan">متن مخصوص اسلاید سوم</div>
+          <button>مشاهده محصولات</button>
+        </div>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="slider-nav">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+      </div>
     </div>
-  </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
 
 
   <section class="categories">
@@ -118,7 +154,32 @@
     <img id="viewerImg" src="" alt="محصول">
   </div>
   <script>
-
+// Select slides and navigation buttons
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let currentSlide = 0;
+const totalSlides = slides.length;
+// Function to display the current slide
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+// Next and previous slide functions
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+}
+// Event listeners for navigation
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+// Optional: Auto-advance slider every 5 seconds
+setInterval(nextSlide, 5000);
     const viewer = document.getElementById("imageViewer");
     const viewerImg = document.getElementById("viewerImg");
 

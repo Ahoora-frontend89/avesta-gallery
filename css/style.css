@@ -161,47 +161,99 @@ nav li:hover::after {
     color: #4c181e;
 }
 /* ================= HERO ================= */
-.hero {
-    background:
-        linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-        url("../assets/482844987_961469956077902_5872026933026224830_n.jpg") center/cover no-repeat;
-    height: 300px;
-    margin: 20px 40px;
-    border-radius: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
+* {
+  box-sizing: border-box;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+.slider-container {
+  position: relative;
+  margin: 20px 40px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+/* Each slide styling */
+.slide {
+  height: 300px;
+  display: none; /* Hide slides by default */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+/* Active slide to display */
+.slide.active {
+  display: flex;
+}
+/* Overlay for darkening effect */
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+}
+/* Content inside each slide */
+.slide-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Hero title and slogan */
 .hero-title {
-    font-size: 56px;
-    font-weight: 900;
+  font-size: 56px;
+  font-weight: 900;
+  margin: 0;
 }
-
 .hero-slogan {
-    font-size: 26px;
-    color: var(--gold);
-    margin: 15px 0 25px;
+  font-size: 26px;
+  color: var(--gold, #FFD700);
+  margin: 15px 0 25px;
 }
-
-.hero button {
-    background: var(--gold);
-    border: none;
-    padding: 14px 40px;
-    font-size: 16px;
-    border-radius: 35px;
-    cursor: pointer;
+/* Button style */
+.slide button {
+  background: var(--gold, #FFD700);
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  border-radius: 35px;
+  cursor: pointer;
 }
-
-/* DESKTOP HERO */
-@media(min-width:1024px) {
-    .hero {
-        height: 650px
-    }
+/* Navigation buttons styling */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 2;
 }
-
+.slider-nav button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* DESKTOP HERO: change height on wider screens */
+@media (min-width: 1024px) {
+  .slide {
+    height: 650px;
+  }
+}
 
 
 
