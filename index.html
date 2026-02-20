@@ -32,7 +32,7 @@
           <li>خانه</li>
           <li>آموزش های ما</li>
           <li><a href="cantact-page.html">تماس با ما</a></li>
-          <li ><a href="customer-satisfaction.html">رضایت مشتری</a></li>
+          <li><a href="customer-satisfaction.html">رضایت مشتری</a></li>
           <li> <a href="custom-order.html"> سفارش مطابق سلیقه شما</a></li>
         </ul>
       </nav>
@@ -53,49 +53,64 @@
     </ul>
   </div>
 
- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hero Slider</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="slider-container">
-      <!-- Slide 1 -->
-      <div class="slide active" style="background-image: url('assets/482844987_961469956077902_5872026933026224830_n.jpg');">
-        <div class="slide-content">
-          <div class="hero-title">اَوِستا</div>
-          <div class="hero-slogan">زیباییِ زنان، قدرتِ مردان 💎</div>
-          <button>مشاهده محصولات</button>
-        </div>
+  <div class="gold-bar">
+    <div class="gold-bar-inner">
+
+      <div class="gold-left">
+        <span class="gold-icon">💎</span>
+        <span class="gold-title">قیمت لحظه‌ای طلای ۱۸ عیار</span>
       </div>
-      <!-- Slide 2 -->
-      <div class="slide" style="background-image: url('assets/image.png');">
-        <div class="slide-content">
-          <div class="hero-title">عنوان اسلاید دوم</div>
-          <div class="hero-slogan">متن مخصوص اسلاید دوم</div>
-          <button>مشاهده محصولات</button>
-        </div>
+
+      <div class="gold-right">
+        <span class="gold-hint">جزئیات</span>
+        <span class="gold-price" id="goldPrice">4,350,000</span>
+        <span class="gold-currency">تومان</span>
+        <button class="gold-info-btn" id="goldInfoBtn">⌄</button>
       </div>
-      <!-- Slide 3 -->
-      <div class="slide" style="background-image: url('assets/IMG_0454\ \(2\).png');">
-        <div class="slide-content">
-          <div class="hero-title">عنوان اسلاید سوم</div>
-          <div class="hero-slogan">متن مخصوص اسلاید سوم</div>
-          <button>مشاهده محصولات</button>
-        </div>
-      </div>
-      <!-- Navigation buttons -->
-      <div class="slider-nav">
-        <button id="prev">&lt;</button>
-        <button id="next">&gt;</button>
+
+    </div>
+
+    <div class="gold-details" id="goldDetails">
+      <p>قیمت بر اساس بازار تهران و مخصوص محاسبه سفارشات اوِستا است.</p>
+      <p class="gold-update">آخرین بروزرسانی: امروز</p>
+    </div>
+  </div>
+
+  <div class="slider-container">
+    <!-- Slide 1 -->
+    <div class="slide active"
+      style="background-image: url('assets/482844987_961469956077902_5872026933026224830_n.jpg');">
+      <div class="slide-content">
+        <div class="hero-title">اَوِستا</div>
+        <div class="hero-slogan">زیباییِ زنان، قدرتِ مردان 💎</div>
+        <button>مشاهده محصولات</button>
       </div>
     </div>
-    
-    <script src="script.js"></script>
-  </body>
-</html>
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('assets/image.png');">
+      <div class="slide-content">
+        <div class="hero-title">عنوان اسلاید دوم</div>
+        <div class="hero-slogan">متن مخصوص اسلاید دوم</div>
+        <button>مشاهده محصولات</button>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image: url('assets/IMG_0454\ \(2\).png');">
+      <div class="slide-content">
+        <div class="hero-title">عنوان اسلاید سوم</div>
+        <div class="hero-slogan">متن مخصوص اسلاید سوم</div>
+        <button>مشاهده محصولات</button>
+      </div>
+    </div>
+    <!-- Navigation buttons -->
+    <div class="slider-nav">
+      <button id="prev">&lt;</button>
+      <button id="next">&gt;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
 
 
   <section class="categories">
@@ -154,32 +169,32 @@
     <img id="viewerImg" src="" alt="محصول">
   </div>
   <script>
-// Select slides and navigation buttons
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let currentSlide = 0;
-const totalSlides = slides.length;
-// Function to display the current slide
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-}
-// Next and previous slide functions
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-}
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-}
-// Event listeners for navigation
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-// Optional: Auto-advance slider every 5 seconds
-setInterval(nextSlide, 5000);
+    // Select slides and navigation buttons
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    // Function to display the current slide
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+    // Next and previous slide functions
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+    // Event listeners for navigation
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    // Optional: Auto-advance slider every 5 seconds
+    setInterval(nextSlide, 5000);
     const viewer = document.getElementById("imageViewer");
     const viewerImg = document.getElementById("viewerImg");
 
@@ -487,6 +502,16 @@ setInterval(nextSlide, 5000);
     };
 
     render(data);
+
+
+    const goldInfoBtn = document.querySelector(".gold-bar-inner");
+    const goldBar = document.querySelector(".gold-bar");
+
+    goldInfoBtn.addEventListener("click", () => {
+      goldBar.classList.toggle("active");
+    });
+
+
 
   </script>
 
